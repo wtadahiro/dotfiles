@@ -1,0 +1,1 @@
+/share/vmconfig/current/local_data/.vimrc
