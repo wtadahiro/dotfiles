@@ -22,11 +22,14 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " plugins to be installed
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'vim-scripts/twilight'
+NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'Townk/vim-autoclose'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'itchyny/lightline.vim'
+
 
 call neobundle#end()
 filetype plugin indent on
