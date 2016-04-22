@@ -54,3 +54,7 @@ hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg
 :command Tr NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <C-n> gt
+
+"NeoComplete
+let g:neocomplete#enable_at_startup = 1
+

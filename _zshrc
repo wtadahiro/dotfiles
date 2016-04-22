@@ -1,0 +1,17 @@
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# aliases
+alias atom='open -a atom'
+alias gpg='gpg2'
+
+if [ -e .alias.sh ]; then
+  source .alias.sh
+fi
+
+# start gpg-agent daemon
+killall gpg-agent
+gpg-agent --daemon --use-standard-socket
