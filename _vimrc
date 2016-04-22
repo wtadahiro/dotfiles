@@ -10,7 +10,6 @@ set cursorline
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
 au BufNewFile,BufRead * match ZenkakuSpace /　/
 
-
 " neobandle
 if has('vim_starting')
   "set runtimepath
@@ -27,6 +26,7 @@ NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'vim-scripts/twilight'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'itchyny/lightline.vim'
 
 call neobundle#end()
 filetype plugin indent on
@@ -49,3 +49,5 @@ hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg
 
 " set alias
 :command Tr NERDTree
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <C-n> gt
