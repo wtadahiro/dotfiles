@@ -5,6 +5,7 @@ set expandtab
 set autoindent 
 set nu
 set cursorline
+set backspace=indent,eol,start
 
 " show full-size space
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
@@ -57,4 +58,5 @@ nnoremap <C-n> gt
 
 "NeoComplete
 let g:neocomplete#enable_at_startup = 1
+
 
