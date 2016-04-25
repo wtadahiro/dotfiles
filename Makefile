@@ -5,8 +5,9 @@ CURRENT_PATH=$(shell pwd)
 help:
 	@echo "make install #=> Create symlinks to home directory"
 	@echo "make update  #=> Fetch changes for this repo"
+	@echo "make deploy  #=> Create symlinks to home directory"
 
-create-symlinks:
+deploy:
 	cd ~/ && rm -f .vimrc && ln -s $(CURRENT_PATH)/_vimrc .vimrc;
 	cd ~/ && rm -f .zshrc && ln -s $(CURRENT_PATH)/_zshrc .zshrc;
 	cd ~/ && rm -f .tmux.conf && ln -s $(CURRENT_PATH)/_tmux.conf .tmux.conf;
