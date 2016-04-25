@@ -13,7 +13,6 @@ au BufNewFile,BufRead * match ZenkakuSpace /　/
 
 " neobandle
 if has('vim_starting')
-  "set runtimepath
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
@@ -31,10 +30,8 @@ NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'itchyny/lightline.vim'
 
-
 call neobundle#end()
 filetype plugin indent on
-
 
 " color schem
 colorscheme jellybeans
@@ -58,5 +55,14 @@ nnoremap <C-n> gt
 
 "NeoComplete
 let g:neocomplete#enable_at_startup = 1
+
+" share clipboard
+set clipboard+=unnamed
+
+" open NERDTree automaticaly when any file is not selected
+if !argc()
+  autocmd vimenter * NERDTree|normal gg3j
+endif
+
 
 
