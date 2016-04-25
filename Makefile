@@ -12,9 +12,13 @@ deploy:
 	cd ~/ && rm -f .zshrc && ln -s $(CURRENT_PATH)/_zshrc .zshrc;
 	cd ~/ && rm -f .tmux.conf && ln -s $(CURRENT_PATH)/_tmux.conf .tmux.conf;
 	cd ~/ && rm -f .gitconfig && ln -s $(CURRENT_PATH)/_gitconfig .gitconfig;
+	cd ~/ && rm -rf .vim/colors && ln -s $(CURRENT_PATH)/vim/colors .vim/colors;
 
 update:
 	git pull origin master
 	git submodule init
 	git submodule update
 	git submodule foreach git pull origin master
+
+init:
+	
