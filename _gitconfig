@@ -19,7 +19,9 @@
     ba = branch -a
     ci = commit -m
     co = checkout
+    cb = checkout -b
 [color]
+    ui = auto
 	diff = auto
 	status = auto
 	branch = auto
