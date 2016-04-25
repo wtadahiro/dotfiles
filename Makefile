@@ -1,4 +1,4 @@
-install: create-symlinks
+install: deploy
 
 CURRENT_PATH=$(shell pwd)
 
@@ -11,6 +11,7 @@ deploy:
 	cd ~/ && rm -f .vimrc && ln -s $(CURRENT_PATH)/_vimrc .vimrc;
 	cd ~/ && rm -f .zshrc && ln -s $(CURRENT_PATH)/_zshrc .zshrc;
 	cd ~/ && rm -f .tmux.conf && ln -s $(CURRENT_PATH)/_tmux.conf .tmux.conf;
+	cd ~/ && rm -f .gitconfig && ln -s $(CURRENT_PATH)/_gitconfig .gitconfig;
 
 update:
 	git pull origin master

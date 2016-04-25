@@ -1,0 +1,31 @@
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = tadahiro.wada
+	email = tadahiro.wada@d8aspring.com
+	signingkey = 1F32836A
+[core]
+	autocrlf = false
+	quotepath = false
+    filemode = false
+[alias]
+    st = status
+    sh = show
+    ft = fetch
+    ad = add
+    br = branch
+    ba = branch -a
+    ci = commit -m
+    co = checkout
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[http]
+	sslVerify = false
+[gpg]
+	program = gpg2
+[commit]
+	gpgsign = true
