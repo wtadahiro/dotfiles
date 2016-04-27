@@ -31,7 +31,7 @@ NeoBundle 'vim-scripts/twilight'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'scrooloose/syntastic'
 
 
 call neobundle#end()
@@ -72,5 +72,9 @@ if !argc()
   autocmd vimenter * NERDTree|normal gg3j
 endif
 
+" syntastic
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
 
 
