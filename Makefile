@@ -13,6 +13,7 @@ deploy:
 	cd ~/ && rm -f .tmux.conf && ln -s $(CURRENT_PATH)/_tmux.conf .tmux.conf;
 	cd ~/ && rm -f .gitconfig && ln -s $(CURRENT_PATH)/_gitconfig .gitconfig;
 	cd ~/ && rm -rf .vim/colors && ln -s $(CURRENT_PATH)/vim/colors .vim/colors;
+	cd ~/ && rm -rf .vim/dict && ln -s $(CURRENT_PATH)/vim/dict .vim/dict;
 
 update:
 	git pull origin master

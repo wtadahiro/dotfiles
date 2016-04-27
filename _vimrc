@@ -29,6 +29,8 @@ NeoBundle 'vim-scripts/twilight'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'scrooloose/syntastic.git'
+
 
 call neobundle#end()
 filetype plugin indent on
