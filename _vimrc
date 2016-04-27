@@ -7,6 +7,8 @@ set nu
 set cursorline
 set backspace=indent,eol,start
 
+let $DOTVIM = $HOME . '/.vim'
+
 " show full-size space
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
 au BufNewFile,BufRead * match ZenkakuSpace /　/
@@ -57,6 +59,10 @@ nnoremap <C-n> gt
 
 "NeoComplete
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#sources#dictionary#dictionaries = {
+  \ 'default': '',
+  \ 'php' : $DOTVIM.'/dict/php.dict'
+  \ }
 
 " share clipboard
 set clipboard+=unnamed
