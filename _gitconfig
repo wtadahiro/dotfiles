@@ -9,7 +9,7 @@
 [core]
 	autocrlf = false
 	quotepath = false
-    filemode = false
+	filemode = false
 [alias]
     st = status
     sh = show
