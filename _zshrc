@@ -8,8 +8,8 @@ fi
 alias atom='open -a atom'
 alias gpg='gpg2'
 
-if [ -e .alias.sh ]; then
-  source .alias.sh
+if [ -e ~/.alias.sh ]; then
+  source ~/.alias.sh
 fi
 
 # start gpg-agent daemon
