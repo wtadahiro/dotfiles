@@ -7,6 +7,12 @@ fi
 # aliases
 alias atom='open -a atom'
 alias gpg='gpg2'
+alias vst='vagrant status'
+alias vup='vagrant up'
+alias vhl='vagrant halt'
+alias vrl='vagrant reload'
+alias vsh='vagrant ssh'
+
 
 if [ -e ~/.alias.sh ]; then
   source ~/.alias.sh
