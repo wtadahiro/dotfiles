@@ -4,6 +4,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# add ~/.composer/vendor/bin to PATH environment variables
+if [ -e $HOME/.composer/vendor/bin/ ]; then
+    export PATH="$PATH:$HOME/.composer/vendor/bin/"
+fi
+
 # aliases
 alias atom='open -a atom'
 alias gpg='gpg2'
