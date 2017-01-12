@@ -1,8 +1,14 @@
 set tabstop=4 shiftwidth=4 softtabstop=4
 
-set showtabline=4
+augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.js,*.jsx setlocal tabstop=2 shiftwidth=2 softtabstop=2
+augroup END
+
+set showtabline=2
 set expandtab
 set autoindent 
+set smartindent
 set nu
 set cursorline
 set backspace=indent,eol,start
