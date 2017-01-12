@@ -14,6 +14,7 @@ deploy:
 	cd ~/ && rm -f .gitconfig && ln -s $(CURRENT_PATH)/_gitconfig .gitconfig;
 	cd ~/ && rm -rf .vim/colors && ln -s $(CURRENT_PATH)/vim/colors .vim/colors;
 	cd ~/ && rm -rf .vim/dict && ln -s $(CURRENT_PATH)/vim/dict .vim/dict;
+	cd ~/ && rm -rf .vim/bundle && ln -s $(CURRENT_PATH)/vim/bundle .vim/bundle;
 
 update:
 	git pull origin master
