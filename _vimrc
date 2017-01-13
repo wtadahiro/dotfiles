@@ -7,7 +7,7 @@ augroup END
 
 set showtabline=2
 set expandtab
-set autoindent 
+set autoindent
 set smartindent
 set nu
 set cursorline
@@ -30,7 +30,10 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " plugins to be installed
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'vim-scripts/twilight'
@@ -39,8 +42,8 @@ NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'itchyny/lightline.vim'
 "NeoBundle 'scrooloose/syntastic'
 
-
 call neobundle#end()
+
 filetype plugin indent on
 
 " color schem
@@ -70,6 +73,35 @@ let g:neocomplete#sources#dictionary#dictionaries = {
   \ 'php' : $DOTVIM.'/dict/php.dict'
   \ }
 
+"neocomplcache
+" -------------------------------------
+let g:neocomplcache_enable_at_startup = 1
+" distinguish UPPER from lower
+let g:neocomplcache_smartcase = 1
+" enable camelCase
+let g:neocomplcache_enablecamelcasecompletion = 1
+" enable under bar completion
+let g:neocomplcache_enableunderbarcompletion = 1
+" min length of completion target
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_plugincompletionlength = {
+            \ 'keyword_complete' : 2,
+            \ 'syntax_complete' : 2
+            \ }
+let g:neocomplcache_dictionary_filetype_lists = {
+            \ 'default' : '',
+            \ }
+
+" 補完候補が表示されている場合は確定。そうでない場合は改行
+inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "<CR>"
+" 補完をキャンセル
+inoremap <expr><C-e>  neocomplcache#close_popup()
+
+"neosnippet key-map
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+let g:neosnippet#snippets_directory= $DOTVIM.'/snippets/'
+
 " share clipboard
 set clipboard+=unnamed
 
@@ -83,4 +115,11 @@ endif
 "let g:syntastic_check_on_open = 0
 "let g:syntastic_check_on_wq = 0
 
+" highlight trailing whitespaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
