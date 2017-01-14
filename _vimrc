@@ -30,10 +30,12 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " plugins to be installed
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/neocomplete'
+"NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'vim-scripts/twilight'
@@ -67,11 +69,11 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <C-n> gt
 
 "NeoComplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#sources#dictionary#dictionaries = {
-  \ 'default': '',
-  \ 'php' : $DOTVIM.'/dict/php.dict'
-  \ }
+"let g:neocomplete#enable_at_startup = 1
+"let g:neocomplete#sources#dictionary#dictionaries = {
+"  \ 'default': '',
+"  \ 'php' : $DOTVIM.'/dict/php.dict'
+"  \ }
 
 "neocomplcache
 " -------------------------------------
@@ -101,6 +103,27 @@ inoremap <expr><C-e>  neocomplcache#close_popup()
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 let g:neosnippet#snippets_directory= $DOTVIM.'/snippets/'
+
+
+" quick run
+" -------------------------------------
+" initialize
+let g:quickrun_config = {}
+" vimproc
+let g:quickrun_config['_'] = {}
+let g:quickrun_config['_']['runner'] = 'vimproc'
+let g:quickrun_config['_']['runner/vimproc/updatetime'] = 100
+" mocha
+augroup QuickRunMocha
+  autocmd!
+
+" javascript
+   autocmd BufWinEnter,BufNewFile *.spec.js,*.spec.jsx,*.spec.es6 silent! set filetype=javascript.unit
+   let g:quickrun_config['javascript.unit'] = {}
+   let g:quickrun_config['javascript.unit']['command'] ='./node_modules/.bin/mocha'
+   let g:quickrun_config['javascript.unit']['cmdopt'] = ''
+   let g:quickrun_config['javascript.unit']['exec'] = '%c %o %s'
+augroup END
 
 " share clipboard
 set clipboard+=unnamed
