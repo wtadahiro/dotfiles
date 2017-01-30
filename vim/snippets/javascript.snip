@@ -15,6 +15,32 @@ snippet it
       ${2:TARGET}
     });
 
-snippet log
-    console.log(${1:TARGET});
+snippet init_container
+    import React, { PropTypes, Component } from 'react';
+    import { connect } from 'react-redux';
+
+    class ${1:TARGET} extends Component {
+      static propTypes = {
+      }
+
+      componentDidMount() {
+      }
+
+      render() {
+        return (
+        );
+      }
+    }
+
+    const mapStateToProps = state => ({
+    });
+
+    const mapDispatchToProps = dispatch => ({
+    });
+
+    export default connect(mapStateToProps, mapDispatchToProps)(${2:TARGET})
+
+snippet component
+    const ${1:TARGET} = () => (
+    );
 
