@@ -38,9 +38,19 @@ snippet init_container
     const mapDispatchToProps = dispatch => ({
     });
 
-    export default connect(mapStateToProps, mapDispatchToProps)(${2:TARGET})
+    export default connect(mapStateToProps, mapDispatchToProps)(${1:TARGET})
 
 snippet component
-    const ${1:TARGET} = () => (
+    const ${1:TARGET} = ({}) => (
     );
 
+    ${2:TARGET}.propTypes = {
+    };
+
+snippet reducer
+    export const ${1:TARGET} = (state = ${2:TARGET}, action) => {
+      switch (action.type) {
+        default:
+          return state;
+      }
+    };
