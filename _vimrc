@@ -110,16 +110,20 @@ let g:neosnippet#snippets_directory= $DOTVIM.'/snippets/'
 " -------------------------------------
 " initialize
 let g:quickrun_config = {}
-" vimproc
 let g:quickrun_config['_'] = {}
 let g:quickrun_config['_']['runner'] = 'vimproc'
-let g:quickrun_config['_']['runner/vimproc/updatetime'] = 100
-let g:quickrun_config['_']['hook/close_buffer/enable_empty_data'] = 1
+let g:quickrun_config['_']['runner/vimproc/updatetime'] = 60
+let g:quickrun_config['_']['split'] = ''
+"let g:quickrun_config['_']['outputter'] = 'error'
+"let g:quickrun_config['_']['outputter/error/success'] = 'buffer'
+"let g:quickrun_config['_']['outputter/error/error'] = 'quickfix'
+"let g:quickrun_config['_']['outputter/buffer/split'] = ':rightbelow'
+"let g:quickrun_config['_']['outputter/buffer/close_on_empty'] = 1
+"let g:quickrun_config['_']['hook/close_buffer/enable_empty_data'] = 1
 
 " mocha
 augroup QuickRunMocha
   autocmd!
-
 " javascript
    autocmd BufWinEnter,BufNewFile *.spec.js,*.spec.jsx,*.spec.es6 silent! set filetype=javascript.unit
    let g:quickrun_config['javascript.unit'] = {}
