@@ -26,3 +26,7 @@ fi
 # start gpg-agent daemon
 killall gpg-agent
 gpg-agent --daemon --use-standard-socket
+
+# direnv
+export EDITOR=vim
+eval "$(direnv hook zsh)"
