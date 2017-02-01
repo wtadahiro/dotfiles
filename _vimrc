@@ -63,10 +63,11 @@ endif
 syntax enable
 hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
 
-" set alias
+" NERDTree
 :command Tr NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <C-n> gt
+let NERDTreeShowHidden=1
 
 "NeoComplete
 "let g:neocomplete#enable_at_startup = 1
@@ -113,6 +114,8 @@ let g:quickrun_config = {}
 let g:quickrun_config['_'] = {}
 let g:quickrun_config['_']['runner'] = 'vimproc'
 let g:quickrun_config['_']['runner/vimproc/updatetime'] = 100
+let g:quickrun_config['_']['hook/close_buffer/enable_empty_data'] = 1
+
 " mocha
 augroup QuickRunMocha
   autocmd!
