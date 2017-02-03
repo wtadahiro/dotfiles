@@ -45,14 +45,14 @@ snippet init_container
 
     export default connect(mapStateToProps, mapDispatchToProps)(${1:TARGET});
 
-snippet component
+snippet new_component
     const ${1:TARGET} = ({}) => (
     );
 
     ${2:TARGET}.propTypes = {
     };
 
-snippet reducer
+snippet new_reducer
     export const ${1:TARGET} = (state = ${2:TARGET}, action) => {
       switch (action.type) {
         default:
