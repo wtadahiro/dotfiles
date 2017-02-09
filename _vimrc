@@ -42,6 +42,8 @@ NeoBundle 'vim-scripts/twilight'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
 "NeoBundle 'scrooloose/syntastic'
 
 call neobundle#end()
@@ -131,6 +133,9 @@ augroup QuickRunMocha
    let g:quickrun_config['javascript.unit']['cmdopt'] = ''
    let g:quickrun_config['javascript.unit']['exec'] = '%c %o %s'
 augroup END
+
+" vim-jsx
+let g:jsx_ext_required = 0
 
 " share clipboard
 set clipboard+=unnamed

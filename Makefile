@@ -16,6 +16,7 @@ deploy:
 	cd ~/ && rm -rf .vim/dict && ln -s $(CURRENT_PATH)/vim/dict .vim/dict;
 	cd ~/ && rm -rf .vim/bundle && ln -s $(CURRENT_PATH)/vim/bundle .vim/bundle;
 	cd ~/ && rm -rf .vim/snippets && ln -s $(CURRENT_PATH)/vim/snippets .vim/snippets;
+	cd ~/ && rm -rf .vim/after && ln -s $(CURRENT_PATH)/vim/after .vim/after
 
 update:
 	git pull origin master

@@ -43,13 +43,14 @@ snippet init_container
     const mapDispatchToProps = dispatch => ({
     });
 
-    export default connect(mapStateToProps, mapDispatchToProps)(${1:TARGET});
+    export default connect(mapStateToProps, mapDispatchToProps)($1);
 
 snippet new_component
-    const ${1:TARGET} = ({}) => (
+    const ${1:TARGET} = ({${2:TARGET}}) => (
+      ${3:TARGET}
     );
 
-    ${2:TARGET}.propTypes = {
+    $1.propTypes = {
     };
 
 snippet new_reducer
