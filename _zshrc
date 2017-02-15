@@ -22,6 +22,7 @@ alias vsh='vagrant ssh'
 if [ -e ~/.alias.sh ]; then
   source ~/.alias.sh
 fi
+export GPG_TTY=${TTY}
 
 # start gpg-agent daemon
 killall gpg-agent
