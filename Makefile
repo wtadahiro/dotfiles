@@ -12,11 +12,7 @@ deploy:
 	cd ~/ && rm -f .zshrc && ln -s $(CURRENT_PATH)/_zshrc .zshrc;
 	cd ~/ && rm -f .tmux.conf && ln -s $(CURRENT_PATH)/_tmux.conf .tmux.conf;
 	cd ~/ && rm -f .gitconfig && ln -s $(CURRENT_PATH)/_gitconfig .gitconfig;
-	cd ~/ && rm -rf .vim/colors && ln -s $(CURRENT_PATH)/vim/colors .vim/colors;
-	cd ~/ && rm -rf .vim/dict && ln -s $(CURRENT_PATH)/vim/dict .vim/dict;
-	cd ~/ && rm -rf .vim/bundle && ln -s $(CURRENT_PATH)/vim/bundle .vim/bundle;
-	cd ~/ && rm -rf .vim/snippets && ln -s $(CURRENT_PATH)/vim/snippets .vim/snippets;
-	cd ~/ && rm -rf .vim/after && ln -s $(CURRENT_PATH)/vim/after .vim/after
+	cd ~/ && rm -rf .vim && ln -s $(CURRENT_PATH)/vim .vim;
 
 update:
 	git pull origin master
