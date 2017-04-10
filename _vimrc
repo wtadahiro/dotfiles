@@ -44,6 +44,8 @@ NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
+NeoBundle 'alvan/vim-closetag'
+NeoBundle 'mattn/emmet-vim'
 "NeoBundle 'scrooloose/syntastic'
 
 call neobundle#end()
@@ -157,6 +159,15 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" Unite
+let g:unite_source_history_yank_enable =1
+let g:unite_source_file_mru_limit = 200
+nnoremap <silent> ,uy :<C-u>Unite history/unite<CR>
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+
+" vim-closetag
+let g:closetag_filenames = "*.html,*.jsx,*.tpl,*.xml"
 
 try
   source ~/.vimrc_external

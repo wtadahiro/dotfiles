@@ -34,3 +34,6 @@ fi
 if [ "$(uname)" == 'Darwin' ]; then
   eval "$(direnv hook zsh)"
 fi
+
+#brew-cask
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
