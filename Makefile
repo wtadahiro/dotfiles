@@ -21,3 +21,8 @@ update:
 	git submodule foreach git pull origin master
 
 init: update deploy
+
+# create so file
+.PHONY: vim
+vim:
+	cd vim/bundle/vimproc.vim && make CC=gcc;

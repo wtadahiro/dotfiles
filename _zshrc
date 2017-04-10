@@ -1,3 +1,4 @@
+export EDITOR=vim
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -10,7 +11,6 @@ if [ -e $HOME/.composer/vendor/bin/ ]; then
 fi
 
 # aliases
-alias atom='open -a atom'
 alias gpg='gpg2'
 alias vst='vagrant status'
 alias vup='vagrant up'
@@ -25,9 +25,12 @@ fi
 export GPG_TTY=${TTY}
 
 # start gpg-agent daemon
-killall gpg-agent
-gpg-agent --daemon --use-standard-socket
+if [ "$(uname)" == 'Darwin' ]; then
+  killall gpg-agent
+  gpg-agent --daemon --use-standard-socket
+fi
 
 # direnv
-export EDITOR=vim
-eval "$(direnv hook zsh)"
+if [ "$(uname)" == 'Darwin' ]; then
+  eval "$(direnv hook zsh)"
+fi
