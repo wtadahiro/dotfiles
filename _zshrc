@@ -25,13 +25,13 @@ fi
 export GPG_TTY=${TTY}
 
 # start gpg-agent daemon
-if [ "$(uname)" == 'Darwin' ]; then
+if [ `which gpg-agent` ]; then
   killall gpg-agent
   gpg-agent --daemon --use-standard-socket
 fi
 
 # direnv
-if [ "$(uname)" == 'Darwin' ]; then
+if [ `which direnv` ]; then
   eval "$(direnv hook zsh)"
 fi
 
