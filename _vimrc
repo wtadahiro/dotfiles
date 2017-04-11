@@ -1,8 +1,8 @@
-set tabstop=4 shiftwidth=4 softtabstop=4
+set tabstop=2 shiftwidth=2 softtabstop=2
 
 augroup fileTypeIndent
     autocmd!
-    autocmd BufNewFile,BufRead *.js,*.jsx setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd BufNewFile,BufRead *.php,*.py setlocal tabstop=4 shiftwidth=4 softtabstop=4
 augroup END
 
 set showtabline=2
@@ -51,6 +51,8 @@ NeoBundle 'mattn/emmet-vim'
 call neobundle#end()
 
 filetype plugin indent on
+
+au BufNewFile,BufRead cpanfile,*.psgi set filetype=perl
 
 " color schem
 colorscheme jellybeans
