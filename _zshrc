@@ -35,5 +35,10 @@ if [ `which direnv` ]; then
   eval "$(direnv hook zsh)"
 fi
 
-#brew-cask
+# brew-cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+

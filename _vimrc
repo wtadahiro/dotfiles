@@ -46,6 +46,7 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'alvan/vim-closetag'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'vim-perl/vim-perl'
 "NeoBundle 'scrooloose/syntastic'
 
 call neobundle#end()
