@@ -13,6 +13,7 @@ deploy:
 	cd ~/ && rm -f .tmux.conf && ln -s $(CURRENT_PATH)/_tmux.conf .tmux.conf;
 	cd ~/ && rm -f .gitconfig && ln -s $(CURRENT_PATH)/_gitconfig .gitconfig;
 	cd ~/ && rm -f .perltidyrc && ln -s $(CURRENT_PATH)/_perltidyrc .perltidyrc;
+	cd ~/ && rm -f .ctags && ln -s $(CURRENT_PATH)/_ctags .ctags;
 	cd ~/ && rm -rf .vim && ln -s $(CURRENT_PATH)/vim .vim;
 
 update:

@@ -192,3 +192,6 @@ try
   source ~/.vimrc_external
 catch
 endtry
+
+" set ctags path
+set tags+=.git/tags
