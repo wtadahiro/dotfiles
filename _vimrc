@@ -186,7 +186,7 @@ nnoremap <silent> ,uy :<C-u>Unite history/unite<CR>
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 
 " vim-closetag
-let g:closetag_filenames = "*.html,*.jsx,*.tpl,*.xml"
+let g:closetag_filenames = "*.html,*.jsx,*.tpl,*.xml,*.tx"
 
 try
   source ~/.vimrc_external
