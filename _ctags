@@ -1,5 +1,5 @@
 --append=no
---recurse
+--recurse=yes
 --sort=yes
---php-kinds=cfd
---perl-kinds
+--tag-relative=yes
+--exclude=*.js

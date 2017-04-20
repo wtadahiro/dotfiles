@@ -193,5 +193,6 @@ try
 catch
 endtry
 
-" set ctags path
+"ctags
 set tags+=.git/tags
+nnoremap <C-]> g<C-]>
