@@ -38,7 +38,6 @@ NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'vim-scripts/twilight'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'itchyny/lightline.vim'
@@ -47,6 +46,7 @@ NeoBundle 'mxw/vim-jsx'
 NeoBundle 'alvan/vim-closetag'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'motemen/xslate-vim'
 "NeoBundle 'scrooloose/syntastic'
 
 call neobundle#end()
@@ -146,7 +146,7 @@ augroup QuickRunProve
 augroup END
 let g:quickrun_config['perl.unit'] = {}
 let g:quickrun_config['perl.unit']['command'] = 'carton'
-let g:quickrun_config['perl.unit']['cmdopt'] = 'exec -- perl -Ilib'
+let g:quickrun_config['perl.unit']['cmdopt'] = 'exec --  perl -Ilib'
 let g:quickrun_config['perl.unit']['exec'] = '%c %o %s'
 
 "perl debug
