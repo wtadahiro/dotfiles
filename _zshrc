@@ -42,3 +42,8 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
+# history
+HISTFILE=$HOME/.zhistory
+HISTSIZE=100000
+SAVEHIST=100000
+setopt share_history
