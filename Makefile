@@ -8,7 +8,7 @@ help:
 	@echo "make deploy  #=> Create symlinks to home directory"
 
 deploy:
-	./scripts/deploy.sh
+	bash ./scripts/deploy.sh
 
 update:
 	git pull origin master

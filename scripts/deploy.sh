@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 base_path=`pwd`;
 ignores=('.' '..' '.git' '.gitignore' '.gitmodules')
