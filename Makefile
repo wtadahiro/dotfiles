@@ -1,4 +1,4 @@
-install: deploy
+all: init
 
 CURRENT_PATH=$(shell pwd)
 
@@ -8,13 +8,7 @@ help:
 	@echo "make deploy  #=> Create symlinks to home directory"
 
 deploy:
-	cd ~/ && rm -f .vimrc && ln -s $(CURRENT_PATH)/_vimrc .vimrc;
-	cd ~/ && rm -f .zshrc && ln -s $(CURRENT_PATH)/_zshrc .zshrc;
-	cd ~/ && rm -f .tmux.conf && ln -s $(CURRENT_PATH)/_tmux.conf .tmux.conf;
-	cd ~/ && rm -f .gitconfig && ln -s $(CURRENT_PATH)/_gitconfig .gitconfig;
-	cd ~/ && rm -f .perltidyrc && ln -s $(CURRENT_PATH)/_perltidyrc .perltidyrc;
-	cd ~/ && rm -f .ctags && ln -s $(CURRENT_PATH)/_ctags .ctags;
-	cd ~/ && rm -rf .vim && ln -s $(CURRENT_PATH)/vim .vim;
+	./scripts/deploy.sh
 
 update:
 	git pull origin master
