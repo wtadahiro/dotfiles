@@ -1,7 +1,7 @@
 #!/bin/bash
 
 base_path=`pwd`;
-ignores=('.' '..' '.git' '.gitignore' '.gitmodules')
+ignores=('.' '..' '.git' '.gitignore' '.gitmodules' '.DS_Store')
 
 isIgnored()
 {
