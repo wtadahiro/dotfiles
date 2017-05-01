@@ -18,7 +18,6 @@ alias vhl='vagrant halt'
 alias vrl='vagrant reload'
 alias vsh='vagrant ssh'
 alias perltidy-all="git diff origin/master... --name-only --diff-filter=AMCRTU | perl -wnle '/\.(pl|pm|t|psgi)$/ and print' | xargs perltidy -b -bext='/'"
-alias la="ls -la"
 
 
 if [ -e ~/.alias.sh ]; then
