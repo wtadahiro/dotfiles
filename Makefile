@@ -1,6 +1,7 @@
 all: init
 
 CURRENT_PATH=$(shell pwd)
+BASH=$(shell which bash)
 
 help:
 	@echo "make install #=> Create symlinks to home directory"
@@ -8,7 +9,7 @@ help:
 	@echo "make deploy  #=> Create symlinks to home directory"
 
 deploy:
-	bash ./scripts/deploy.sh
+	${BASH} ./scripts/deploy.sh
 
 update:
 	git pull origin master
