@@ -48,3 +48,10 @@ HISTFILE=$HOME/.zhistory
 HISTSIZE=100000
 SAVEHIST=100000
 setopt share_history
+
+# fastlane
+export PATH="$HOME/.fastlane/bin:$PATH"
+
+# android SDK
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+

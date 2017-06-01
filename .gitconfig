@@ -23,6 +23,8 @@
 	cb = checkout -b
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	fp = fetch --prune
+  delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -D %
+  delete-merged-remote-branches = !git branch -a --merged | grep -v master | grep remotes/origin| sed -e 's% *remotes/origin/%%' | xargs -I% git push origin :%
 [color]
 	ui = auto
 	diff = auto
