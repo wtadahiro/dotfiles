@@ -22,4 +22,4 @@ init: update deploy
 # create so file
 .PHONY: vim
 vim:
-	cd vim/bundle/vimproc.vim && make CC=gcc;
+	cd .vim/bundle/vimproc.vim && make CC=gcc;
