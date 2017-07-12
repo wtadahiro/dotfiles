@@ -36,8 +36,6 @@ if [ `which direnv` ]; then
   eval "$(direnv hook zsh)"
 fi
 
-# brew-cask
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
@@ -49,9 +47,18 @@ HISTSIZE=100000
 SAVEHIST=100000
 setopt share_history
 
-# fastlane
-export PATH="$HOME/.fastlane/bin:$PATH"
 
-# android SDK
-export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 
+# OS dependent settings
+case ${OSTYPE} in
+  darwin*)
+    # enable to key-repeat for vim plugin of JET BRAINS IDEs
+    defaults write -g ApplePressAndHoldEnabled -bool false
+    # brew-cask
+    export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+    # android SDK
+    export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+    # fastlane
+    export PATH="$HOME/.fastlane/bin:$PATH"
+    ;;
+esac
