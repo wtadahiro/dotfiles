@@ -18,6 +18,7 @@ alias vhl='vagrant halt'
 alias vrl='vagrant reload'
 alias vsh='vagrant ssh'
 alias perltidy-all="git diff origin/master... --name-only --diff-filter=AMCRTU | perl -wnle '/\.(pl|pm|t|psgi)$/ and print' | xargs perltidy -b -bext='/'"
+alias rm-swp="find ./ -name '*.swp' | xargs rm"
 
 
 if [ -e ~/.alias.sh ]; then
