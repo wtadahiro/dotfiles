@@ -11,7 +11,6 @@ if [ -e $HOME/.composer/vendor/bin/ ]; then
 fi
 
 # aliases
-alias gpg='gpg2'
 alias vst='vagrant status'
 alias vup='vagrant up'
 alias vhl='vagrant halt'
@@ -25,12 +24,6 @@ if [ -e ~/.alias.sh ]; then
   source ~/.alias.sh
 fi
 export GPG_TTY=${TTY}
-
-# start gpg-agent daemon
-if [ `which gpg-agent` ]; then
-  killall gpg-agent
-  gpg-agent --daemon --use-standard-socket
-fi
 
 # direnv
 if [ `which direnv` ]; then
@@ -61,5 +54,15 @@ case ${OSTYPE} in
     export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
     # fastlane
     export PATH="$HOME/.fastlane/bin:$PATH"
+    #autojump
+    sudo zsh /usr/local/Cellar/autojump/22.5.1/share/autojump/autojump.zsh
+    alias j="autojump"
+    if [ -f `brew --prefix`/etc/autojump ]; then
+        . `brew --prefix`/etc/autojump
+    fi
     ;;
+
 esac
+
+setopt nonomatch
+
