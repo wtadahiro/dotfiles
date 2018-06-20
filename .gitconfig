@@ -1,36 +1,36 @@
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 [user]
-	name = tadahiro.wada
-	email = tadahiro.wada@d8aspring.com
-	signingkey = 1F32836A
+  name = tadahiro.wada
+  email = tadahiro.wada@d8aspring.com
+  signingkey = 1F32836A
 [core]
-	autocrlf = false
-	quotepath = false
-	filemode = false
-	editor = vim
+  autocrlf = false
+  quotepath = false
+  filemode = false
+  editor = vim
 [alias]
-	st = status
-	sh = show
-	ft = fetch
-	ad = add
-	br = branch
-	ba = branch -a
-	ci = commit -m
-	co = checkout
-	cb = checkout -b
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	fp = fetch --prune
+  st = status
+  sh = show
+  ft = fetch
+  ad = add
+  br = branch
+  ba = branch -a
+  ci = commit -m
+  co = checkout
+  cb = checkout -b
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  fp = fetch --prune
   delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -D %
   delete-merged-remote-branches = !git branch -a --merged | grep -v master | grep remotes/origin| sed -e 's% *remotes/origin/%%' | xargs -I% git push origin :%
 [color]
-	ui = auto
-	diff = auto
-	status = auto
-	branch = auto
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
 [http]
-	sslVerify = false
+  sslVerify = false
 [merge]
-	tool = vimdiff
+  tool = vimdiff
