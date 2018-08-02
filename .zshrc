@@ -55,7 +55,7 @@ case ${OSTYPE} in
     # fastlane
     export PATH="$HOME/.fastlane/bin:$PATH"
     #autojump
-    sudo zsh /usr/local/Cellar/autojump/22.5.1/share/autojump/autojump.zsh
+    #sudo zsh /usr/local/Cellar/autojump/22.5.1/share/autojump/autojump.zsh
     alias j="autojump"
     if [ -f `brew --prefix`/etc/autojump ]; then
         . `brew --prefix`/etc/autojump
