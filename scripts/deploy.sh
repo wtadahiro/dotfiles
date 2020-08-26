@@ -1,7 +1,7 @@
 #!/bin/bash
 
 base_path=`pwd`;
-ignores=('.' '..' '.git' '.gitignore' '.gitmodules' '.DS_Store')
+ignores=('.' '..' '.git' '.gitignore' '.gitmodules' '.DS_Store' '.git_template')
 
 isIgnored()
 {
@@ -14,7 +14,9 @@ for file_path in $base_path/.*; do
   filename=`basename $file_path`
   isIgnored $filename
   if [ $? -eq 1 ]; then
-    ln -sf $file_path $HOME/$filename
+#    ln -sf $file_path $HOME/$filename
+    echo $file_path;
+    echo $HOME/$filename
   fi
 done
 
