@@ -1,11 +1,11 @@
-set tabstop=2 shiftwidth=2 softtabstop=2
+set tabstop=2 shiftwidth=2 softtabstop=2 showtabline=2
+
 
 augroup fileTypeIndent
     autocmd!
     autocmd BufNewFile,BufRead *.php,*.py setlocal tabstop=4 shiftwidth=4 softtabstop=4
 augroup END
 
-set showtabline=2
 set expandtab
 set autoindent
 set smartindent
@@ -24,32 +24,27 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-" initialize
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" plugins to be installed
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler'
-"NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/vimproc.vim'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'vim-scripts/taglist.vim'
-NeoBundle 'Townk/vim-autoclose'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'alvan/vim-closetag'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'vim-perl/vim-perl'
-NeoBundle 'motemen/xslate-vim'
-"NeoBundle 'scrooloose/syntastic'
-
-call neobundle#end()
+" Package Manager Plug
+call plug#begin()
+Plug 'preservim/nerdtree'
+Plug 'nanotech/jellybeans.vim'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler'
+Plug 'Shougo/neocomplcache'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/vimproc.vim'
+Plug 'thinca/vim-quickrun'
+Plug 'vim-scripts/taglist.vim'
+Plug 'Townk/vim-autoclose'
+Plug 'itchyny/lightline.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'alvan/vim-closetag'
+Plug 'mattn/emmet-vim'
+Plug 'vim-perl/vim-perl'
+Plug 'motemen/xslate-vim'
+call plug#end()
 
 filetype plugin indent on
 

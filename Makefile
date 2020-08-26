@@ -17,7 +17,14 @@ update:
 	git submodule update
 	git submodule foreach git pull origin master
 
-init: update deploy
+init: update install-plug deploy
+
+install-plug:
+	curl -fLo .vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+install-vim-plugins:
+	vim +PlugInstall
 
 # create so file
 .PHONY: vim
